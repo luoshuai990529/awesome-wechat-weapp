@@ -1,1 +1,192 @@
-<mxfile host="app.diagrams.net" modified="2021-03-04T05:56:04.164Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36" version="14.4.4" etag="KOuqrmFMEPsU_rjk3ZGb" type="github"><diagram id="ul1DnFTWsOfhhYxiakKQ">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-03-04T05:57:19.694Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36" etag="MKFdNY9gqY7hdunlzMS8" version="14.4.4" type="github">
+  <diagram id="ul1DnFTWsOfhhYxiakKQ" name="第 1 页">
+    <mxGraphModel dx="4547" dy="2482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-2" value="1-proxyData将data数据代理到Vue实例并进行监听" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="63" y="80" as="sourcePoint" />
+            <mxPoint x="105" y="150" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-4" value="gettet()：Vue实例的data数据被调用触发" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="12.5" y="160" width="185" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-5" value="2-&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;initComputed初始化计算属性&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="20" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="150" as="sourcePoint" />
+            <mxPoint x="520" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-8" target="bWqhlaqcdq2MMicU0YAN-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-8" value="2.1-遍历this.computed计算属性，给每一个计算属性创建一个观察者Watcher，添加到vue的&lt;span style=&quot;font-family: &amp;#34;consolas&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; font-size: 14px ; white-space: pre ; background-color: rgb(255 , 255 , 255)&quot;&gt;computedWatchers&lt;/span&gt;&lt;span style=&quot;font-size: 14px ; white-space: pre ; background-color: rgb(255 , 255 , 255)&quot;&gt;对象中&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="415" y="150" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-9" value="2.2-将计算属性的代理到Vue实例中进行监听，这个时候的getter获取的其实是watcher中缓存的value" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="495" y="370" as="sourcePoint" />
+            <mxPoint x="520" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-11" value="getter()：计算属性被调用，拿到computedWatcher中对应的观察者watcher，根据观察者的dirty属性进行判断是否需要重新计算value" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="360" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-12" value="3-Observe观察Vue的data数据的变化触发UI更新" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="20" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-13" value="4-Compiler模板编译" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-14" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-2" target="bWqhlaqcdq2MMicU0YAN-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="75" as="sourcePoint" />
+            <mxPoint x="300" y="25" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-15" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="50" as="sourcePoint" />
+            <mxPoint x="800" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-16" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="960" y="50" as="sourcePoint" />
+            <mxPoint x="1120" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-17" value="ComputedWatcher计算属性观察者类" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-35" y="680" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-18" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-17" target="bWqhlaqcdq2MMicU0YAN-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="56" y="870" as="sourcePoint" />
+            <mxPoint x="75" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-19" value="getter:计算书的方法Fn&lt;br&gt;dirty:是否已经计算过value&lt;br&gt;nodeList:该观察者观察的node节点&lt;br&gt;value:计算属性的缓存值&lt;br&gt;&lt;br&gt;get方法：执行getter方法缓存value值&lt;br&gt;addDep方法：调用dep订阅者的addDep方法，传入dep和一个唯一的key&lt;br&gt;evaluate方法：调用get方法，计算完成修改dirty为false&lt;br&gt;update方法：调用evaluate方法，并更新nodeList中的所有节点内容" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-140" y="810" width="430" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-20" value="" style="endArrow=none;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-17" target="bWqhlaqcdq2MMicU0YAN-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="360" as="sourcePoint" />
+            <mxPoint x="300" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-21" value="创建wathcer：调用get()方法求得当前wathcer的value" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="120" y="500" width="112" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-22" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontColor=#FF0000;strokeColor=#FF0000;entryX=0.026;entryY=1.271;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-23" target="bWqhlaqcdq2MMicU0YAN-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="84" y="360" as="sourcePoint" />
+            <mxPoint x="120" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-23" value="&lt;span style=&quot;background-color: rgb(248 , 249 , 250)&quot;&gt;1-执行get方法()时给Dep.target赋值&lt;/span&gt;&lt;br style=&quot;background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;background-color: rgb(248 , 249 , 250)&quot;&gt;Dep.target=当前的watcher对象&lt;/span&gt;&lt;br&gt;&lt;br&gt;2-watcher调用get方法，会使用到Vue实例中data中的数据，此时进行依赖收集" style="text;html=1;strokeColor=#FF0000;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-175" y="320" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-24" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontColor=#FF0000;strokeColor=#FF0000;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-21" target="bWqhlaqcdq2MMicU0YAN-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="198" y="345" as="sourcePoint" />
+            <mxPoint x="120" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-25" value="&lt;span style=&quot;white-space: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; 0-创建一个计算属性的订阅者Dep对象，&lt;br&gt;全局可访问&lt;/span&gt;&lt;br style=&quot;white-space: normal&quot;&gt;&lt;span style=&quot;white-space: normal&quot;&gt;let dep = new Dep()&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;strokeColor=#000000;fillColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="20" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-26" value="" style="endArrow=classic;html=1;strokeColor=#000000;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-25" target="bWqhlaqcdq2MMicU0YAN-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-490" y="60" as="sourcePoint" />
+            <mxPoint x="-440" y="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-27" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#000000;fontColor=#000000;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-28" target="bWqhlaqcdq2MMicU0YAN-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-750" y="1020" as="sourcePoint" />
+            <mxPoint x="-630" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-28" value="Dep计算属性订阅者类，进行watcher的统一管理" style="ellipse;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;strokeColor=#000000;fillColor=none;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-860" y="680" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-29" value="deps数组：用来存储watcher，以对象的形式存储{key,watcher}，key用来标识对应依赖所对应的watcher对象&lt;br&gt;&lt;br&gt;addDeps方法：向deps数组中添加对watcher的方法&lt;br&gt;depend方法：依赖收集的方法&lt;br&gt;notify方法：接收watcher，调用watcher的update更新" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-935" y="810" width="430" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-30" value="" style="endArrow=classic;html=1;strokeColor=#000000;fontColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-28" target="bWqhlaqcdq2MMicU0YAN-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-930" y="1020" as="sourcePoint" />
+            <mxPoint x="-880" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-31" value="" style="endArrow=classic;html=1;strokeColor=#FF0000;fontColor=#000000;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.994;entryY=1.055;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-32" target="bWqhlaqcdq2MMicU0YAN-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-140" y="210" as="sourcePoint" />
+            <mxPoint x="-90" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-32" value="&amp;nbsp; &amp;nbsp; 调用dep对象的depend依赖收集方法，传入当前的依赖名，depend方法会根据key来判断该依赖是否重复，不重复才将该wathcer添加到deps数组中" style="text;html=1;strokeColor=#FF0000;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-380" y="120" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-33" value="" style="endArrow=classic;html=1;strokeColor=#FF0000;fontColor=#000000;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-4" target="bWqhlaqcdq2MMicU0YAN-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="12.5" y="164.9999999999999" as="sourcePoint" />
+            <mxPoint x="-491.55999999999995" y="93.85000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-34" value="" style="endArrow=classic;html=1;strokeColor=#000000;fontColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-13" target="bWqhlaqcdq2MMicU0YAN-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="970" y="500" as="sourcePoint" />
+            <mxPoint x="1180" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-35" value="4.1-模板编译到计算属性，拿到计算属性方法名称，以及当前的node节点&lt;br&gt;4.2-拿到dep对象的所有依赖遍历，找到watcher的getter方法名和当前node节点的方法名相同的wathcer，将该node节点添加到watcher的nodeList中进行管理，&lt;br&gt;4.3-并返回vue实例中对应的计算属性name的值，即initComputed阶段代理到Vue实例中缓存的value值" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="120" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-36" value="" style="endArrow=classic;html=1;strokeColor=#000000;fontColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-12" target="bWqhlaqcdq2MMicU0YAN-37">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="770" y="470" as="sourcePoint" />
+            <mxPoint x="880" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-37" value="date中的值发生改变，触发setter，拿到dep的依赖列表deps进行遍历，找到改依赖对应的watcher，并调用dep的notify方法，将wathcer传入，如果没有找到计算属性的wathcer则表示改依赖不影响计算属性，则不会调用notify方法" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FFFF00;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="730" y="220" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-38" value="" style="endArrow=classic;html=1;strokeColor=#FFFF00;fontColor=#FF0000;entryX=0.99;entryY=0.01;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-37" target="bWqhlaqcdq2MMicU0YAN-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="775" y="490" as="sourcePoint" />
+            <mxPoint x="70" y="-110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="680" y="-70" />
+              <mxPoint x="210" y="-230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-39" value="调用dep的notify方法，让对应的watcher去执行update" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-15" y="-200" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-40" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#FFFF00;fontColor=#000000;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="bWqhlaqcdq2MMicU0YAN-19" target="bWqhlaqcdq2MMicU0YAN-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-930" y="1020" as="sourcePoint" />
+            <mxPoint x="-880" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bWqhlaqcdq2MMicU0YAN-41" value="Dep通知Wathcer进行update重新计算value并更新node节点" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="855" width="110" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
